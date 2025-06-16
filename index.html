@@ -121,10 +121,60 @@
 </section>
 
   <section id="maps">
-    <h2>Heatmaps of Incidents</h2>
-    <h3>Global Heatmap of Missing and Dead Migrants</h3>
-    <p>This map provides an overview of where migrant deaths have occurred around the world. It highlights major global routes where fatalities have been documented and helps identify patterns across continents.</p>
-    <iframe src="map1_heatmap_world.html" width="100%" height="600px"></iframe>
+  <h2>Heatmaps of Incidents</h2>
+  <h3>Global Heatmap of Missing and Dead Migrants</h3>
+  <p>This map provides an overview of where migrant deaths have occurred around the world. It highlights major global routes where fatalities have been documented and helps identify patterns across continents.</p>
+  <iframe src="map1_heatmap_world.html" width="100%" height="600px"></iframe>
+</section>
+
+<section id="exploratory">
+  <h2>Exploratory Plots: Demographics, Origins and Routes</h2>
+  <p>To better understand key patterns in global migrant deaths, we generated several descriptive visualizations. These help highlight demographic risks, top origin countries, causes of death, and route-specific dangers.</p>
+
+  <div class="flex-container">
+    <div class="flex-item">
+      <h3>Demographic Distribution</h3>
+      <p>Men account for the majority of deaths and disappearances (66.3%), followed by women (20.9%) and children (12.9%). This pattern reflects the high proportion of male migrants globally.</p>
+      <img src="chart1_demographic_distribution.png" alt="Demographic Distribution" width="100%">
+    </div>
+
+    <div class="flex-item">
+      <h3>Top 10 Countries of Origin</h3>
+      <p>Among reported cases, Afghanistan, Mexico and several Central American and African countries are frequently listed as countries of origin. The largest share remains "Unknown" due to incomplete data.</p>
+      <img src="chart_2top10_origin_percentage.png" alt="Top 10 Origin Countries" width="100%">
+    </div>
+  </div>
+
+  <div class="flex-container">
+    <div class="flex-item">
+      <h3>Cause of Death</h3>
+      <p>The dominant cause of fatalities is very clearly <strong>drowning (57.5%)</strong>, strongly reflecting the extreme dangers associated with maritime crossings, particularly across the Mediterranean and Atlantic routes. This is followed by <strong>unknown or mixed causes (14.5%)</strong>, highlighting major gaps in data and classification. Other important contributors include <strong>hazardous transport accidents (8.9%)</strong>, <strong>violence (6.8%)</strong>, and <strong>harsh environmental conditions (6.8%)</strong>, such as desert exposure, dehydration, and extreme temperatures.</p>
+      <img src="chart3_cause_of_death_percentage.png" alt="Cause of Death Distribution" width="100%">
+    </div>
+  </div>
+
+  <div class="flex-container">
+    <div class="flex-item">
+      <h3>Routes by Incident Share</h3>
+      <p>This chart shows the share of reported incidents across routes. The US-Mexico border, Afghanistan to Iran, and Sahara crossings lead in frequency, but not necessarily in severity.</p>
+      <img src="chart4_migration_routes_percentage.png" alt="Routes by Incidents" width="100%">
+    </div>
+
+    <div class="flex-item">
+      <h3>Routes by Share of Deaths</h3>
+      <p>When focusing on the actual number of deaths and missing persons, Mediterranean routes become dominant (over 50% of deaths), followed by the Sahara Desert and US-Mexico border.</p>
+      <img src="chart5_migration_routes_deaths_percentage.png" alt="Routes by Deaths" width="100%">
+    </div>
+  </div>
+
+  <p>Based on these results, our spatial analyses focused on six corridors: Mediterranean, Sahara, US-Mexico, Canary Islands, East Africa to Gulf, and Afghanistan to Iran. These account for over 90% of recorded deaths and missing cases worldwide.</p>
+</section>
+
+<section>
+  <h3>Average Incident Locations by Month and Year</h3>
+  <p>This visualization shows the average locations of incidents by month and by year. It helps to identify seasonal trends and how migration patterns may have shifted over time.</p>
+  <iframe src="map2_weighted_average.html" width="100%" height="600px"></iframe>
+</section>
 
     <h3>Average Incident Locations by Month and Year</h3>
     <p>This visualization shows the average locations of incidents by month and by year. It helps to identify seasonal trends and how migration patterns may have shifted over time.</p>
