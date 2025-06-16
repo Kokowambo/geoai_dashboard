@@ -42,6 +42,13 @@
       flex: 1;
       min-width: 300px;
     }
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+    }
   </style>
 </head>
 <body>
@@ -52,8 +59,8 @@
     <a href="#overview">Overview</a>
     <a href="#motivation">Motivation</a>
     <a href="#data">Data Source</a>
-    <a href="#maps">Maps</a>
     <a href="#exploratory">Exploratory</a>
+    <a href="#maps">Maps</a>
     <a href="#clusters">Clustering</a>
     <a href="#kde">KDE</a>
     <a href="#lisa">LISA</a>
@@ -63,111 +70,35 @@
 
   <section id="overview">
     <h2>Overview</h2>
-    <p>This dashboard visualizes migrant deaths and disappearances across the globe. It highlights major migration corridors and uses spatial analysis to uncover meaningful geographic and temporal patterns.</p>
+    <p>This dashboard visualizes migrant deaths and disappearances across the globe. It highlights major migration corridors and uses spatial analysis to uncover meaningful geographic and temporal patterns. The visualizations aim to support humanitarian understanding through interactive maps and clustering techniques.</p>
   </section>
 
   <section id="motivation">
     <h2>Motivation</h2>
-    <p>Every year, thousands of migrants risk their lives crossing international borders. Many do not survive. While these tragedies are often reduced to numbers, this project uses data to identify where and when these deaths and disappearances happen.</p>
+    <p>Every year, thousands of migrants risk their lives crossing international borders. Many do not survive. While these tragedies are often reduced to numbers, this project uses data to identify where and when these deaths and disappearances happen, across multiple major migration routes.</p>
+    <p>By uncovering spatial and temporal patterns in migrant fatalities across the top 6 most dangerous migration corridors, including the Mediterranean, the US-Mexico border, the Sahara Desert, and others, this analysis aims to support evidence-based action. The goal is not just to visualize loss, but to reveal where preventive measures could save the most lives.</p>
   </section>
 
   <section id="data">
     <h2>Data Source</h2>
-    <p>The data is provided by the International Organization for Migration (IOM) through the Missing Migrants Project. It spans from 2014 to the present and is continuously updated by NGOs, media and official sources.</p>
+    <p>The data is provided by the International Organization for Migration (IOM) through the Missing Migrants Project. It documents deaths and disappearances during migration worldwide. The dataset includes time, location, demographics and cause of death. It spans from 2014 to the present and is continuously updated by NGOs, media and official sources.</p>
   </section>
 
   <section id="maps">
-    <h2>Heatmaps of Incidents</h2>
-    <h3>Global Heatmap of Missing and Dead Migrants</h3>
-    <p>This map provides an overview of where migrant deaths have occurred around the world.</p>
+    <h2>Step 4: Global Heatmap and Summary Statistics</h2>
+    <p>In this step, we generate a global heatmap of migrant incidents using <code>folium.HeatMap</code>, where each point is weighted by the number of dead and missing persons. This allows areas with more severe consequences to stand out more clearly.</p>
+    <p>The purpose of this step is to:</p>
+    <ul>
+      <li>provide a <strong>first global spatial overview</strong> of migrant deaths and missing persons,</li>
+      <li>visually highlight <strong>high-impact regions</strong> worldwide.</li>
+    </ul>
+    <p>In addition, we calculate:</p>
+    <ul>
+      <li>the <strong>total number of deaths and missing persons globally</strong>,</li>
+      <li>and how much of this burden is concentrated in specific major routes (as defined later).</li>
+    </ul>
+    <p>These global statistics serve as reference points for the more detailed analysis on selected key migration routes.</p>
+    <p><strong>Observation:</strong><br>
+    At this global scale, the most hotspots appear across <strong>North Africa, the Mediterranean, along Mexico as well as the border between Afghanistan and Iran and in South Asia</strong> — already indicating where the deadliest risks tend to concentrate.</p>
     <iframe src="map1_heatmap_world.html" width="100%" height="600px"></iframe>
   </section>
-
-  <section id="exploratory">
-    <h2>Exploratory Plots: Demographics, Origins and Routes</h2>
-    <p>These visualizations show demographic risks, top origin countries, causes of death, and route-specific patterns.</p>
-
-    <div class="flex-container">
-      <div class="flex-item">
-        <h3>Demographic Distribution</h3>
-        <img src="chart1_demographic_distribution.png" alt="Demographics" width="100%">
-      </div>
-      <div class="flex-item">
-        <h3>Top 10 Countries of Origin</h3>
-        <img src="chart_2top10_origin_percentage.png" alt="Origin Countries" width="100%">
-      </div>
-    </div>
-
-    <div class="flex-container">
-      <div class="flex-item">
-        <h3>Cause of Death</h3>
-        <p><strong>Drowning (57.5%)</strong> is the leading cause, followed by unknown/mixed causes, transport accidents, and violence or exposure.</p>
-        <img src="chart3_cause_of_death_percentage.png" alt="Cause of Death" width="100%">
-      </div>
-    </div>
-
-    <div class="flex-container">
-      <div class="flex-item">
-        <h3>Routes by Incidents</h3>
-        <img src="chart4_migration_routes_percentage.png" alt="Routes by Incidents" width="100%">
-      </div>
-      <div class="flex-item">
-        <h3>Routes by Deaths</h3>
-        <img src="chart5_migration_routes_deaths_percentage.png" alt="Routes by Deaths" width="100%">
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h3>Average Incident Locations by Month and Year</h3>
-    <p>This map shows average incident locations across time to visualize seasonal and long-term trends.</p>
-    <iframe src="map2_weighted_average.html" width="100%" height="600px"></iframe>
-  </section>
-
-  <section id="clusters">
-    <h2>Clustering of Migration Incidents</h2>
-    <div class="flex-container">
-      <div class="flex-item">
-        <h3>Elbow Method</h3>
-        <img src="elbow_geoai.png" alt="Elbow Chart" width="100%">
-      </div>
-      <div class="flex-item">
-        <h3>KMeans Clustering</h3>
-        <iframe src="map3_kmeans_top6routes.html" width="100%" height="400px"></iframe>
-      </div>
-      <div class="flex-item">
-        <h3>DBSCAN Clustering</h3>
-        <iframe src="map4_dbscan.html" width="100%" height="400px"></iframe>
-      </div>
-    </div>
-  </section>
-
-  <section id="kde">
-    <h2>Kernel Density Estimation (KDE)</h2>
-    <iframe src="map5_kde_map.html" width="100%" height="600px"></iframe>
-  </section>
-
-  <section id="lisa">
-    <h2>Local Indicators of Spatial Association (LISA)</h2>
-    <h3>North Africa</h3>
-    <iframe src="map6_lisa_north_africa.html" width="100%" height="600px"></iframe>
-
-    <h3>US–Mexico Border</h3>
-    <iframe src="map7_lisa_us_mexico.html" width="100%" height="600px"></iframe>
-
-    <h3>Eastern Migration Route</h3>
-    <iframe src="map8_lisa_eastern.html" width="100%" height="600px"></iframe>
-  </section>
-
-  <section id="evaluation">
-    <h2>Evaluation and Interpretation</h2>
-    <p>The spatial analysis highlights where risks are highest and supports targeted humanitarian responses.</p>
-  </section>
-
-  <section id="conclusion">
-    <h2>Conclusion</h2>
-    <p>Every data point represents a human life. This dashboard seeks to make invisible tragedies visible—and actionable.</p>
-  </section>
-
-</body>
-</html>
