@@ -186,12 +186,22 @@
   </section>
 
   <section id="kde">
-    <h2>Kernel Density Estimation (KDE): Visualizing Risk Hotspots</h2>
-    <p>To further highlight spatial concentrations of fatalities, we applied <strong>Kernel Density Estimation (KDE)</strong>. This method produces a smoothed heatmap based on incident density, helping to visually detect <strong>hotspots of migrant death</strong>.</p>
+    <h2>Kernel Density Estimation (KDE): Fatality Hotspots in Continuous Space</h2>
+    <p>To capture not just where incidents occur, but also where the <strong>most severe outcomes</strong> are concentrated, we applied <strong>Kernel Density Estimation (KDE)</strong>. Unlike previous steps focused on totals or clusters, KDE incorporates the exact <strong>incident locations</strong> and weights each one by the number of deaths and missing persons reported.</p>
 
-    <p>The KDE map confirms the earlier findings: the most lethal corridors are the <strong>Central Mediterranean (Libya to Italy)</strong>, the <strong>Sahara Desert</strong>, and the <strong>US–Mexico border</strong>. These are the regions with the most intense and recurring fatal events.</p>
+    <p>This technique visualizes two key aspects at once:</p>
+    <ul>
+      <li>The geographic location of each incident (incident count)</li>
+      <li>The severity of each incident based on the number of fatalities (severity weighting)</li>
+    </ul>
 
-    <p>Because KDE accounts for both <strong>incident density and proximity</strong>, it can also reveal secondary hotspots (e.g., the Horn of Africa, West Africa coast) that might otherwise be overlooked. The output is especially valuable for humanitarian actors seeking to allocate resources effectively.</p>
+    <p>One of the most prominent results is a <strong>clear high-intensity hotspot</strong> across <strong>North Africa</strong>, especially in the areas surrounding <strong>Libya, Tunisia, and the Central Sahara corridor</strong>. Despite global data coverage, most high-weighted values concentrate in this region, confirming its extreme risk level.</p>
+
+    <p>Other regions such as the <strong>US–Mexico border</strong>, <strong>Western Africa</strong>, or <strong>Eastern migration routes</strong> contribute far less to the weighted density. This reflects either fewer incidents or a lower average severity per incident in those zones.</p>
+
+    <p>Unlike clustering methods that form discrete groups, KDE produces a <strong>continuous spatial surface</strong>. This makes it easier to detect risk transitions across borders and recognize broader geographic patterns of danger.</p>
+
+    <p>By combining where incidents occur and how deadly they are, this map adds an essential dimension to the previous route-based and cluster-based analyses.</p>
 
     <iframe src="map5_kde_map.html" width="100%" height="600px"></iframe>
   </section>
