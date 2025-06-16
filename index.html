@@ -171,3 +171,27 @@
       </div>
     </div>
   </section>
+  <section id="dbscan">
+    <h2>DBSCAN Clustering: Detecting Natural Groupings</h2>
+    <p>While KMeans enforces fixed cluster counts, DBSCAN is a <strong>density-based algorithm</strong> that automatically detects groupings based on spatial proximity. It's particularly useful for uncovering <strong>irregular shapes</strong> and separating noise (isolated incidents).</p>
+
+    <p>DBSCAN produced more flexible and realistic clusters, especially in dense areas like the <strong>Central Mediterranean</strong> and <strong>Sahara Desert</strong>. It identified <strong>natural groupings of incidents</strong> without forcing them into artificial patterns. This makes it ideal for analyzing real-world migration paths, where clusters often follow coastlines, mountain passes, or deserts.</p>
+
+    <div class="flex-container">
+      <div class="flex-item">
+        <h4 style="text-align: center;">DBSCAN Clustering Result</h4>
+        <iframe src="map4_dbscan.html" width="100%" height="400px"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="kde">
+    <h2>Kernel Density Estimation (KDE): Visualizing Risk Hotspots</h2>
+    <p>To further highlight spatial concentrations of fatalities, we applied <strong>Kernel Density Estimation (KDE)</strong>. This method produces a smoothed heatmap based on incident density, helping to visually detect <strong>hotspots of migrant death</strong>.</p>
+
+    <p>The KDE map confirms the earlier findings: the most lethal corridors are the <strong>Central Mediterranean (Libya to Italy)</strong>, the <strong>Sahara Desert</strong>, and the <strong>US–Mexico border</strong>. These are the regions with the most intense and recurring fatal events.</p>
+
+    <p>Because KDE accounts for both <strong>incident density and proximity</strong>, it can also reveal secondary hotspots (e.g., the Horn of Africa, West Africa coast) that might otherwise be overlooked. The output is especially valuable for humanitarian actors seeking to allocate resources effectively.</p>
+
+    <iframe src="map5_kde_map.html" width="100%" height="600px"></iframe>
+  </section>
