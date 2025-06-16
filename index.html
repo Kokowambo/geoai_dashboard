@@ -76,29 +76,18 @@
   <section id="motivation">
     <h2>Motivation</h2>
     <p>Every year, thousands of migrants risk their lives crossing international borders. Many do not survive. While these tragedies are often reduced to numbers, this project uses data to identify where and when these deaths and disappearances happen, across multiple major migration routes.</p>
-    <p>By uncovering spatial and temporal patterns in migrant fatalities across the top 6 most dangerous migration corridors, including the Mediterranean, the US-Mexico border, the Sahara Desert, and others, this analysis aims to support evidence-based action. The goal is not just to visualize loss, but to reveal where preventive measures could save the most lives.</p>
+    <p>By uncovering spatial and temporal patterns in migrant fatalities across the top 6 most dangerous migration corridors—including the Mediterranean, the US-Mexico border, the Sahara Desert, and others—this analysis aims to support evidence-based action. The goal is not just to visualize loss, but to reveal where preventive measures could save the most lives.</p>
   </section>
 
   <section id="data">
     <h2>Data Source</h2>
-    <p>The data is provided by the International Organization for Migration (IOM) through the Missing Migrants Project. It documents deaths and disappearances during migration worldwide. The dataset includes time, location, demographics and cause of death. It spans from 2014 to the present and is continuously updated by NGOs, media and official sources.</p>
+    <p>The data is provided by the International Organization for Migration (IOM) through the Missing Migrants Project. It documents deaths and disappearances during migration worldwide. The dataset includes time, location, demographics, and cause of death. It spans from 2014 to the present and is continuously updated by NGOs, media, and official sources.</p>
   </section>
 
   <section id="maps">
-    <h2>Step 4: Global Heatmap and Summary Statistics</h2>
-    <p>In this step, we generate a global heatmap of migrant incidents using <code>folium.HeatMap</code>, where each point is weighted by the number of dead and missing persons. This allows areas with more severe consequences to stand out more clearly.</p>
-    <p>The purpose of this step is to:</p>
-    <ul>
-      <li>provide a <strong>first global spatial overview</strong> of migrant deaths and missing persons,</li>
-      <li>visually highlight <strong>high-impact regions</strong> worldwide.</li>
-    </ul>
-    <p>In addition, we calculate:</p>
-    <ul>
-      <li>the <strong>total number of deaths and missing persons globally</strong>,</li>
-      <li>and how much of this burden is concentrated in specific major routes (as defined later).</li>
-    </ul>
-    <p>These global statistics serve as reference points for the more detailed analysis on selected key migration routes.</p>
-    <p><strong>Observation:</strong><br>
-    At this global scale, the most hotspots appear across <strong>North Africa, the Mediterranean, along Mexico as well as the border between Afghanistan and Iran and in South Asia</strong> — already indicating where the deadliest risks tend to concentrate.</p>
+    <h2>Global Heatmap of Incidents</h2>
+    <p>To provide an initial spatial overview, we created a global heatmap that shows where migrant deaths and disappearances have occurred since 2014. Each data point is weighted by the number of dead and missing persons to emphasize severity.</p>
+    <p>This visualization helps identify high-risk zones and geographic concentrations of migrant fatalities. It serves as a baseline for more detailed route-specific analyses that follow.</p>
+    <p>Clear global patterns emerge from this heatmap: high densities are visible in <strong>North Africa</strong>, the <strong>Central and Eastern Mediterranean</strong>, the <strong>US-Mexico border region</strong>, and the <strong>Afghanistan-Iran corridor</strong>, highlighting where deadly risks are most acute.</p>
     <iframe src="map1_heatmap_world.html" width="100%" height="600px"></iframe>
   </section>
