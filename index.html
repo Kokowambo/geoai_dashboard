@@ -132,3 +132,42 @@
 
     <p><strong>Selected Routes for Deeper Analysis:</strong> Based on the visualizations above, our analysis focuses on six corridors that account for over <strong>92% of global deaths</strong>: the Mediterranean (Central, Western, Eastern), Sahara Desert, US–Mexico border, Canary Islands route, Eastern Route to/from EHOA, and the Afghanistan–Iran corridor. These were selected due to their high burden of fatality, geographic diversity, and representativeness of broader global patterns.</p>
   </section>
+  <section id="averages">
+    <h2>Average Incident Locations Over Time</h2>
+    <p>To explore how migration-related fatalities shift in time and space, we calculated <strong>weighted average coordinates</strong> for each month and year based on the number of deaths and missing per incident. These averages help detect whether the spatial center of fatalities drifts over time due to geopolitical or environmental factors.</p>
+
+    <p>Monthly averages show <strong>no strong seasonal trend</strong>. The centroid remains fairly stable, mostly located in <strong>northern Algeria and the surrounding North African corridor</strong>. This suggests that the most fatal incidents are not seasonally driven, but instead concentrated in persistent danger zones.</p>
+
+    <p>Yearly averages reveal a <strongmoderate westward shift</strong> over time. From 2014 to 2016, the centroid was more eastern (closer to Libya); from 2019 to 2023, it shifted westward, indicating increased risk in areas like the <strong>Western Sahara</strong> and <strong>Western Mediterranean</strong>. The shift in 2025 should be interpreted with caution, as data for that year is still incomplete.</p>
+
+    <iframe src="map2_weighted_average.html" width="100%" height="600px"></iframe>
+  </section>
+
+  <section id="clusters">
+    <h2>KMeans Clustering of Fatal Incidents</h2>
+    <p>To uncover hidden patterns in the spatial distribution of migrant deaths, we used <strong>KMeans clustering</strong>. This method assigns incidents to the nearest geographic cluster, helping reveal spatial zones with similar risk characteristics.</p>
+
+    <h3>Choosing the Number of Clusters</h3>
+    <div class="card">
+      <h4>Elbow Method</h4>
+      <p>The Elbow plot shows how clustering performance (inertia) improves with more clusters. The "elbow" point indicates diminishing returns beyond a certain number. In our case, <strong>k = 3</strong> was chosen, balancing spatial resolution with interpretability.</p>
+      <img src="elbow_geoai.png" alt="Elbow Chart" width="100%">
+    </div>
+
+    <h3>Cluster Interpretation</h3>
+    <p>The KMeans model grouped incidents into three distinct clusters:</p>
+    <ul>
+      <li><strong>Cluster 0 (Red): US–Mexico Border</strong> – Covers deaths in Central America and Mexico, with incidents tightly grouped along known land corridors.</li>
+      <li><strong>Cluster 1 (Blue): Eastern Africa, Horn of Africa, and Middle East</strong> – This group includes deaths in the Afghanistan–Iran corridor, Eastern Route to the Gulf, and parts of the Horn of Africa. It reflects longer, overland journeys with region-specific risks.</li>
+      <li><strong>Cluster 2 (Green): Mediterranean and Sahara</strong> – This large cluster includes desert and maritime deaths, capturing the Central Mediterranean and Sahara Desert zones where the most mass-fatality events occur.</li>
+    </ul>
+
+    <p>These clusters are not perfect—KMeans assumes spherical shapes and does not detect outliers—but they offer a useful first segmentation of global fatal migration zones.</p>
+
+    <div class="flex-container">
+      <div class="flex-item">
+        <h4 style="text-align: center;">KMeans Clustering Map</h4>
+        <iframe src="map3_kmeans_top6routes.html" width="100%" height="400px"></iframe>
+      </div>
+    </div>
+  </section>
