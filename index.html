@@ -52,8 +52,8 @@
     <a href="#overview">Overview</a>
     <a href="#motivation">Motivation</a>
     <a href="#data">Data Source</a>
-    <a href="#exploratory">Exploratory</a>
     <a href="#maps">Maps</a>
+    <a href="#exploratory">Exploratory</a>
     <a href="#clusters">Clustering</a>
     <a href="#kde">KDE</a>
     <a href="#lisa">LISA</a>
@@ -63,141 +63,80 @@
 
   <section id="overview">
     <h2>Overview</h2>
-    <p>This dashboard visualizes migrant deaths and disappearances across the globe. It highlights major migration corridors and uses spatial analysis to uncover meaningful geographic and temporal patterns. The visualizations aim to support humanitarian understanding through interactive maps and clustering techniques.</p>
+    <p>This dashboard visualizes migrant deaths and disappearances across the globe. It highlights major migration corridors and uses spatial analysis to uncover meaningful geographic and temporal patterns.</p>
   </section>
 
   <section id="motivation">
     <h2>Motivation</h2>
-    <p>Every year, thousands of migrants risk their lives crossing international borders. Many do not survive. While these tragedies are often reduced to numbers, this project uses data to identify where and when these deaths and disappearances happen, across multiple major migration routes.</p>
-    <p>By uncovering spatial and temporal patterns in migrant fatalities across the top 6 most dangerous migration corridors, including the Mediterranean, the US-Mexico border, the Sahara Desert, and others, this analysis aims to support evidence-based action. The goal is not just to visualize loss, but to reveal where preventive measures could save the most lives.</p>
+    <p>Every year, thousands of migrants risk their lives crossing international borders. Many do not survive. While these tragedies are often reduced to numbers, this project uses data to identify where and when these deaths and disappearances happen.</p>
   </section>
 
   <section id="data">
     <h2>Data Source</h2>
-    <p>The data is provided by the International Organization for Migration (IOM) through the Missing Migrants Project. It documents deaths and disappearances during migration worldwide. The dataset includes time, location, demographics and cause of death. It spans from 2014 to the present and is continuously updated by NGOs, media and official sources.</p>
+    <p>The data is provided by the International Organization for Migration (IOM) through the Missing Migrants Project. It spans from 2014 to the present and is continuously updated by NGOs, media and official sources.</p>
+  </section>
+
+  <section id="maps">
+    <h2>Heatmaps of Incidents</h2>
+    <h3>Global Heatmap of Missing and Dead Migrants</h3>
+    <p>This map provides an overview of where migrant deaths have occurred around the world.</p>
+    <iframe src="map1_heatmap_world.html" width="100%" height="600px"></iframe>
   </section>
 
   <section id="exploratory">
-  <h2>Exploratory Plots: Demographics, Origins and Routes</h2>
-  <p>To better understand key patterns in global migrant deaths, we generated several descriptive visualizations. These help highlight demographic risks, top origin countries, causes of death, and route-specific dangers.</p>
+    <h2>Exploratory Plots: Demographics, Origins and Routes</h2>
+    <p>These visualizations show demographic risks, top origin countries, causes of death, and route-specific patterns.</p>
 
-  <div class="flex-container">
-    <div class="flex-item">
-      <h3>Demographic Distribution</h3>
-      <p>Men account for the majority of deaths and disappearances (66.3%), followed by women (20.9%) and children (12.9%). This pattern reflects the high proportion of male migrants globally.</p>
-      <img src="chart1_demographic_distribution.png" alt="Demographic Distribution" width="100%">
+    <div class="flex-container">
+      <div class="flex-item">
+        <h3>Demographic Distribution</h3>
+        <img src="chart1_demographic_distribution.png" alt="Demographics" width="100%">
+      </div>
+      <div class="flex-item">
+        <h3>Top 10 Countries of Origin</h3>
+        <img src="chart_2top10_origin_percentage.png" alt="Origin Countries" width="100%">
+      </div>
     </div>
 
-    <div class="flex-item">
-      <h3>Top 10 Countries of Origin</h3>
-      <p>Among reported cases, Afghanistan, Mexico and several Central American and African countries are frequently listed as countries of origin. The largest share remains "Unknown" due to incomplete data.</p>
-      <img src="chart_2top10_origin_percentage.png" alt="Top 10 Origin Countries" width="100%">
-    </div>
-  </div>
-
-  <div class="flex-container">
-    <div class="flex-item">
-      <h3>Cause of Death</h3>
-      <p>The dominant cause of fatalities is very clearly <strong>drowning (57.5%)</strong>, strongly reflecting the extreme dangers associated with maritime crossings, particularly across the Mediterranean and Atlantic routes. This is followed by <strong>unknown or mixed causes (14.5%)</strong>, highlighting major gaps in data and classification. Other important contributors include <strong>hazardous transport accidents (8.9%)</strong>, <strong>violence (6.8%)</strong>, and <strong>harsh environmental conditions (6.8%)</strong>, such as desert exposure, dehydration, and extreme temperatures.</p>
-      <img src="chart3_cause_of_death_percentage.png" alt="Cause of Death Distribution" width="100%">
-    </div>
-  </div>
-
-  <div class="flex-container">
-    <div class="flex-item">
-      <h3>Routes by Incident Share</h3>
-      <p>This chart shows the share of reported incidents across routes. The US-Mexico border, Afghanistan to Iran, and Sahara crossings lead in frequency, but not necessarily in severity.</p>
-      <img src="chart4_migration_routes_percentage.png" alt="Routes by Incidents" width="100%">
+    <div class="flex-container">
+      <div class="flex-item">
+        <h3>Cause of Death</h3>
+        <p><strong>Drowning (57.5%)</strong> is the leading cause, followed by unknown/mixed causes, transport accidents, and violence or exposure.</p>
+        <img src="chart3_cause_of_death_percentage.png" alt="Cause of Death" width="100%">
+      </div>
     </div>
 
-    <div class="flex-item">
-      <h3>Routes by Share of Deaths</h3>
-      <p>When focusing on the actual number of deaths and missing persons, Mediterranean routes become dominant (over 50% of deaths), followed by the Sahara Desert and US-Mexico border.</p>
-      <img src="chart5_migration_routes_deaths_percentage.png" alt="Routes by Deaths" width="100%">
+    <div class="flex-container">
+      <div class="flex-item">
+        <h3>Routes by Incidents</h3>
+        <img src="chart4_migration_routes_percentage.png" alt="Routes by Incidents" width="100%">
+      </div>
+      <div class="flex-item">
+        <h3>Routes by Deaths</h3>
+        <img src="chart5_migration_routes_deaths_percentage.png" alt="Routes by Deaths" width="100%">
+      </div>
     </div>
-  </div>
+  </section>
 
-  <p>Based on these results, our spatial analyses focused on six corridors: Mediterranean, Sahara, US-Mexico, Canary Islands, East Africa to Gulf, and Afghanistan to Iran. These account for over 90% of recorded deaths and missing cases worldwide.</p>
-</section>
-
-  <section id="maps">
-  <h2>Heatmaps of Incidents</h2>
-  <h3>Global Heatmap of Missing and Dead Migrants</h3>
-  <p>This map provides an overview of where migrant deaths have occurred around the world. It highlights major global routes where fatalities have been documented and helps identify patterns across continents.</p>
-  <iframe src="map1_heatmap_world.html" width="100%" height="600px"></iframe>
-</section>
-
-<section id="exploratory">
-  <h2>Exploratory Plots: Demographics, Origins and Routes</h2>
-  <p>To better understand key patterns in global migrant deaths, we generated several descriptive visualizations. These help highlight demographic risks, top origin countries, causes of death, and route-specific dangers.</p>
-
-  <div class="flex-container">
-    <div class="flex-item">
-      <h3>Demographic Distribution</h3>
-      <p>Men account for the majority of deaths and disappearances (66.3%), followed by women (20.9%) and children (12.9%). This pattern reflects the high proportion of male migrants globally.</p>
-      <img src="chart1_demographic_distribution.png" alt="Demographic Distribution" width="100%">
-    </div>
-
-    <div class="flex-item">
-      <h3>Top 10 Countries of Origin</h3>
-      <p>Among reported cases, Afghanistan, Mexico and several Central American and African countries are frequently listed as countries of origin. The largest share remains "Unknown" due to incomplete data.</p>
-      <img src="chart_2top10_origin_percentage.png" alt="Top 10 Origin Countries" width="100%">
-    </div>
-  </div>
-
-  <div class="flex-container">
-    <div class="flex-item">
-      <h3>Cause of Death</h3>
-      <p>The dominant cause of fatalities is very clearly <strong>drowning (57.5%)</strong>, strongly reflecting the extreme dangers associated with maritime crossings, particularly across the Mediterranean and Atlantic routes. This is followed by <strong>unknown or mixed causes (14.5%)</strong>, highlighting major gaps in data and classification. Other important contributors include <strong>hazardous transport accidents (8.9%)</strong>, <strong>violence (6.8%)</strong>, and <strong>harsh environmental conditions (6.8%)</strong>, such as desert exposure, dehydration, and extreme temperatures.</p>
-      <img src="chart3_cause_of_death_percentage.png" alt="Cause of Death Distribution" width="100%">
-    </div>
-  </div>
-
-  <div class="flex-container">
-    <div class="flex-item">
-      <h3>Routes by Incident Share</h3>
-      <p>This chart shows the share of reported incidents across routes. The US-Mexico border, Afghanistan to Iran, and Sahara crossings lead in frequency, but not necessarily in severity.</p>
-      <img src="chart4_migration_routes_percentage.png" alt="Routes by Incidents" width="100%">
-    </div>
-
-    <div class="flex-item">
-      <h3>Routes by Share of Deaths</h3>
-      <p>When focusing on the actual number of deaths and missing persons, Mediterranean routes become dominant (over 50% of deaths), followed by the Sahara Desert and US-Mexico border.</p>
-      <img src="chart5_migration_routes_deaths_percentage.png" alt="Routes by Deaths" width="100%">
-    </div>
-  </div>
-
-  <p>Based on these results, our spatial analyses focused on six corridors: Mediterranean, Sahara, US-Mexico, Canary Islands, East Africa to Gulf, and Afghanistan to Iran. These account for over 90% of recorded deaths and missing cases worldwide.</p>
-</section>
-
-<section>
-  <h3>Average Incident Locations by Month and Year</h3>
-  <p>This visualization shows the average locations of incidents by month and by year. It helps to identify seasonal trends and how migration patterns may have shifted over time.</p>
-  <iframe src="map2_weighted_average.html" width="100%" height="600px"></iframe>
-</section>
-
+  <section>
     <h3>Average Incident Locations by Month and Year</h3>
-    <p>This visualization shows the average locations of incidents by month and by year. It helps to identify seasonal trends and how migration patterns may have shifted over time.</p>
+    <p>This map shows average incident locations across time to visualize seasonal and long-term trends.</p>
     <iframe src="map2_weighted_average.html" width="100%" height="600px"></iframe>
   </section>
 
   <section id="clusters">
     <h2>Clustering of Migration Incidents</h2>
-    <p>Clustering methods help us understand how migration-related deaths are grouped spatially. These methods reveal concentrations of risk and allow us to compare different algorithmic approaches.</p>
     <div class="flex-container">
       <div class="flex-item">
-        <h3 style="text-align: center;">Elbow Method</h3>
-        <p>The elbow method helps determine the optimal number of clusters for KMeans. It plots the within-cluster sum of squares to find a balance between simplicity and accuracy.</p>
+        <h3>Elbow Method</h3>
         <img src="elbow_geoai.png" alt="Elbow Chart" width="100%">
       </div>
       <div class="flex-item">
-        <h3 style="text-align: center;">KMeans Clustering (k=3)</h3>
-        <p>This map shows the result of applying KMeans clustering with three clusters. It identifies major hotspots where incidents are spatially grouped.</p>
+        <h3>KMeans Clustering</h3>
         <iframe src="map3_kmeans_top6routes.html" width="100%" height="400px"></iframe>
       </div>
       <div class="flex-item">
-        <h3 style="text-align: center;">DBSCAN Clustering</h3>
-        <p>The DBSCAN method groups incidents based on spatial density. It is useful for detecting irregular cluster shapes and identifying noise or outliers.</p>
+        <h3>DBSCAN Clustering</h3>
         <iframe src="map4_dbscan.html" width="100%" height="400px"></iframe>
       </div>
     </div>
@@ -205,35 +144,29 @@
 
   <section id="kde">
     <h2>Kernel Density Estimation (KDE)</h2>
-    <p>The KDE map visualizes areas with a high concentration of migrant death incidents. It uses a density estimation method that highlights critical zones along international migration routes where risks are especially high.</p>
     <iframe src="map5_kde_map.html" width="100%" height="600px"></iframe>
   </section>
 
   <section id="lisa">
     <h2>Local Indicators of Spatial Association (LISA)</h2>
-    <p>LISA analysis identifies statistically significant spatial clusters and outliers. It helps reveal whether incidents of migrant deaths tend to be spatially grouped or randomly distributed. This method supports deeper understanding of spatial dependencies in the data.</p>
-
     <h3>North Africa</h3>
-    <p>This map highlights clusters in North Africa, especially along desert routes like the central Sahara. These areas are extremely dangerous due to environmental exposure and lack of rescue infrastructure.</p>
     <iframe src="map6_lisa_north_africa.html" width="100%" height="600px"></iframe>
 
     <h3>US–Mexico Border</h3>
-    <p>This map focuses on the US–Mexico border region, where migrant deaths often occur due to extreme temperatures and border enforcement dynamics.</p>
     <iframe src="map7_lisa_us_mexico.html" width="100%" height="600px"></iframe>
 
     <h3>Eastern Migration Route</h3>
-    <p>This analysis reveals clustering patterns along the Eastern migration corridor, which includes parts of the Horn of Africa and routes toward the Arabian Peninsula.</p>
     <iframe src="map8_lisa_eastern.html" width="100%" height="600px"></iframe>
   </section>
 
   <section id="evaluation">
     <h2>Evaluation and Interpretation</h2>
-    <p>Our spatial techniques confirmed the intensity and structure of fatal migration events. The clustering results reveal clear migration corridors and highlight high-risk areas. These patterns suggest that certain routes are consistently more dangerous, which underlines the need for focused humanitarian responses.</p>
+    <p>The spatial analysis highlights where risks are highest and supports targeted humanitarian responses.</p>
   </section>
 
   <section id="conclusion">
     <h2>Conclusion</h2>
-    <p>Migrant deaths are not isolated events. They reflect broader and persistent problems. Our data analysis tools help to make these patterns visible. At the same time, it is important to remember that each data point represents a person with a story, a family and a hope for a better future. We hope this dashboard contributes to understanding and compassion by showing what is often hidden from view.</p>
+    <p>Every data point represents a human life. This dashboard seeks to make invisible tragedies visible—and actionable.</p>
   </section>
 
 </body>
